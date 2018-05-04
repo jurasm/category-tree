@@ -62,7 +62,7 @@ function renderRecursive(tree, container) {
 
 function renderIterative(tree) {
   iterativeContainer.appendChild(document.createElement('ul'));
-  
+
   const stack = [{
     container: iterativeContainer,
     branch: tree[0]
@@ -72,8 +72,8 @@ function renderIterative(tree) {
   while(current = stack.pop()) {
     const container = renderItem(current.container, current.branch);
 
-    if (current.element.children) {
-      [...current.element.children].reverse().forEach(branch => stack.push({
+    if (current.branch.children) {
+      [...current.branch.children].reverse().forEach(branch => stack.push({
           container,
           branch
         })
