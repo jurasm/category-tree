@@ -4,9 +4,13 @@ const iterativeContainer = document.getElementById('iterative');
 async function fetchTree() {
   try {
     const response = await fetch('tree.json');
-    return response.json();
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error(response.statusText);
+    }
   } catch(e) {
-    throw new Error('Fetch failed');
+    console.error(e);
   }
 }
 
