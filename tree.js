@@ -1,4 +1,3 @@
-// @ts-check
 const recursiveContainer = document.getElementById('recursive');
 const iterativeContainer = document.getElementById('iterative');
 let tree;
