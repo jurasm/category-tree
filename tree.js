@@ -1,5 +1,5 @@
 const recursiveContainer = document.getElementById('recursive');
-const iterativeConteainer = document.getElementById('iterative');
+const iterativeContainer = document.getElementById('iterative');
 
 async function fetchTree() {
   try {
@@ -10,8 +10,15 @@ async function fetchTree() {
   }
 }
 
+function clearContainer(container) {
+  while (container.hasChildNodes()) {
+    container.removeChild(container.lastChild);
+  }
+}
+
 function render(tree) {
-  console.log(tree);
+  clearContainer(recursiveContainer);
+  clearContainer(iterativeContainer);
 }
 
 document.addEventListener('DOMContentLoaded', function() { 
